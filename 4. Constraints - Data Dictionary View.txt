@@ -1,0 +1,163 @@
+-- SHUBHAM DESHMUKH | deshmukhsv3@gmail.com | 9096159803
+
+-- Constraints Data Dictionary View
+
+-- Constraint
+select
+uc.table_name, uc.constraint_name, uc.constraint_type,uc.r_constraint_name, ucc.column_name, uc.delete_rule,
+uc.search_condition_vc
+from user_constraints uc join user_cons_columns ucc
+on uc.constraint_name = ucc.constraint_name
+where lower(uc.table_name) = 'college';
+
+
+-- Constraint
+select
+uc.table_name, uc.constraint_name, uc.constraint_type,uc.r_constraint_name, ucc.column_name, uc.delete_rule,
+uc.search_condition_vc
+from user_constraints uc join user_cons_columns ucc
+on uc.constraint_name = ucc.constraint_name
+where lower(uc.table_name) = 'qualification';
+
+
+-- Constraint
+select
+uc.table_name, uc.constraint_name, uc.constraint_type,uc.r_constraint_name, ucc.column_name, uc.delete_rule,
+uc.search_condition_vc
+from user_constraints uc join user_cons_columns ucc
+on uc.constraint_name = ucc.constraint_name
+where lower(uc.table_name) = 'stream';
+
+
+-- Constraint
+select
+uc.table_name, uc.constraint_name, uc.constraint_type,uc.r_constraint_name, ucc.column_name, uc.delete_rule,
+uc.search_condition_vc
+from user_constraints uc join user_cons_columns ucc
+on uc.constraint_name = ucc.constraint_name
+where lower(uc.table_name) = 'college_sem';
+
+
+-- Constraint
+select
+uc.table_name, uc.constraint_name, uc.constraint_type,uc.r_constraint_name, ucc.column_name, uc.delete_rule,
+uc.search_condition_vc
+from user_constraints uc join user_cons_columns ucc
+on uc.constraint_name = ucc.constraint_name
+where lower(uc.table_name) = 'college_year';
+
+
+-- Constraint
+select
+uc.table_name, uc.constraint_name, uc.constraint_type,uc.r_constraint_name, ucc.column_name, uc.delete_rule,
+uc.search_condition_vc
+from user_constraints uc join user_cons_columns ucc
+on uc.constraint_name = ucc.constraint_name
+where lower(uc.table_name) = 'staff';
+
+
+-- Constraint
+select
+uc.table_name, uc.constraint_name, uc.constraint_type,uc.r_constraint_name, ucc.column_name, uc.delete_rule,
+uc.search_condition_vc
+from user_constraints uc join user_cons_columns ucc
+on uc.constraint_name = ucc.constraint_name
+where lower(uc.table_name) = 'course';
+
+
+-- Constraint
+select
+uc.table_name, uc.constraint_name, uc.constraint_type,uc.r_constraint_name, ucc.column_name, uc.delete_rule,
+uc.search_condition_vc
+from user_constraints uc join user_cons_columns ucc
+on uc.constraint_name = ucc.constraint_name
+where lower(uc.table_name) = 'country';
+
+
+-- Constraint
+select
+uc.table_name, uc.constraint_name, uc.constraint_type,uc.r_constraint_name, ucc.column_name, uc.delete_rule,
+uc.search_condition_vc
+from user_constraints uc join user_cons_columns ucc
+on uc.constraint_name = ucc.constraint_name
+where lower(uc.table_name) = 'state';
+
+
+-- Constraint
+select
+uc.table_name, uc.constraint_name, uc.constraint_type,uc.r_constraint_name, ucc.column_name, uc.delete_rule,
+uc.search_condition_vc
+from user_constraints uc join user_cons_columns ucc
+on uc.constraint_name = ucc.constraint_name
+where lower(uc.table_name) = 'city';
+
+
+-- Constraint
+select
+uc.table_name, uc.constraint_name, uc.constraint_type,uc.r_constraint_name, ucc.column_name, uc.delete_rule,
+uc.search_condition_vc
+from user_constraints uc join user_cons_columns ucc
+on uc.constraint_name = ucc.constraint_name
+where lower(uc.table_name) = 'enquiry_master';
+
+
+-- Constraint
+select
+uc.table_name, uc.constraint_name, uc.constraint_type,uc.r_constraint_name, ucc.column_name, uc.delete_rule,
+uc.search_condition_vc
+from user_constraints uc join user_cons_columns ucc
+on uc.constraint_name = ucc.constraint_name
+where lower(uc.table_name) = 'college_history';
+
+
+-- Constraint
+select
+uc.table_name, uc.constraint_name, uc.constraint_type,uc.r_constraint_name, ucc.column_name, uc.delete_rule,
+uc.search_condition_vc
+from user_constraints uc join user_cons_columns ucc
+on uc.constraint_name = ucc.constraint_name
+where lower(uc.table_name) = 'source_master';
+
+
+-- Constraint
+select
+uc.table_name, uc.constraint_name, uc.constraint_type,uc.r_constraint_name, ucc.column_name, uc.delete_rule,
+uc.search_condition_vc
+from user_constraints uc join user_cons_columns ucc
+on uc.constraint_name = ucc.constraint_name
+where lower(uc.table_name) = 'source_history';
+
+
+-- Constraint
+select
+uc.table_name, uc.constraint_name, uc.constraint_type,uc.r_constraint_name, ucc.column_name, uc.delete_rule,
+uc.search_condition_vc
+from user_constraints uc join user_cons_columns ucc
+on uc.constraint_name = ucc.constraint_name
+where lower(uc.table_name) = 'enquiry_handled';
+
+
+-- Constraint
+select
+uc.table_name, uc.constraint_name, uc.constraint_type,uc.r_constraint_name, ucc.column_name, uc.delete_rule,
+uc.search_condition_vc
+from user_constraints uc join user_cons_columns ucc
+on uc.constraint_name = ucc.constraint_name
+where lower(uc.table_name) = 'follow_up';
+
+-- SHUBHAM DESHMUKH | deshmukhsv3@gmail.com | 9096159803
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

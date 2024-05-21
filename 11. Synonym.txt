@@ -1,0 +1,20 @@
+-- SHUBHAM DESHMUKH | deshmukhsv3@gmail.com | 9096159803
+
+-- Creating Synonyms
+
+-- Creating Private Synonym
+create or replace synonym clg for college;
+create or replace synonym qul for qualification;
+create or replace synonym crs for course;
+create or replace synonym enq_mstr for enquiry_master;
+create or replace synonym clg_his for college_history;
+create or replace synonym src_mstr for source_master;
+
+
+-- Creating Public Synonym
+create or replace public synonym ct1 for city;
+create or replace public synonym st1 for state;
+create or replace public synonym cunt1 for country;
+create or replace public synonym crs1 for course;
+
+-- SHUBHAM DESHMUKH | deshmukhsv3@gmail.com | 9096159803

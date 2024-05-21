@@ -1,0 +1,40 @@
+-- SHUBHAM DESHMUKH | deshmukhsv3@gmail.com | 9096159803
+
+-- Creating Views
+
+create or replace view education_opt
+as
+select c.college_name, q.degree_name, s.stream_name,cr.course_id, cr.course_name, cr.fee, cs.sem_name, cy.year_name
+from college c, qualification q, stream s, college_sem cs, college_year cy, college_history ch, course cr, enquiry_handled eh, enquiry_master em
+where c.college_id = ch.college_id
+and q.qid = ch.qid
+and s.stream_id = ch.stream_id
+and cs.sem_id = ch.sem_id
+and cy.year_id = ch.year_id
+and cr.course_id = eh.course_id
+and eh.enquiry_id = em.enquiry_id
+and ch.enquiry_id = em.enquiry_id
+with read only constraint only_read_is_allowed;
+
+
+create or replace view enquiry_details
+as
+select em.enquiry_id, em.name, em.address, em.job_profile, sm.source_name, c.city_name, s.state_name, c.country_name, st.staff_name, fu.remark
+from enquiry_master em, source_history sh, source_master sm, follow_up fu, city c, state s, country c, staff st
+where em.enquiry_id = sh.enquiry_id
+and sh.source_id = sm.source_id
+and em.city_id = c.city_id
+and c.state_id = s.state_id
+and s.country_id = c.country_id
+and em.enquiry_id = fu.enquiry_id
+and fu.staff_id = st.staff_id
+with read only constraint only_readable;
+
+
+create or replace view colleges as
+select college_name, degree_name, stream_name, course_name from education_opt
+with read only constraint only_read;
+
+
+-- SHUBHAM DESHMUKH | deshmukhsv3@gmail.com | 9096159803
+

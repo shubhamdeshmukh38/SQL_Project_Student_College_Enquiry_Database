@@ -1,0 +1,125 @@
+-- SHUBHAM DESHMUKH | deshmukhsv3@gmail.com | 9096159803
+
+-- Solving Questions on Created Database
+
+
+-- Que 1. Display the following format for all persons comes for enquiry.
+-- 'The name of a person comes for enquiry is ____, lives in ____ and having email address ______'
+select 'The name of a person comes for enquiry is ' || name || ', lives in ' || address || ' and having email address '  || email || '.'  as details from enquiry_master;
+
+-- Que 2. Display the name, email, address of the persons who are 'Data Analyst' by profession.
+select name, email, address, job_profile from enquiry_master where job_profile = 'Data Analyst';
+
+
+-- Que 3. Display the top 7 most expensive courses.
+select * from course order by fee desc nulls last fetch first 7 rows with ties;
+
+
+-- Que 4. Display the names of staff in descending order.
+select staff_name from staff order by staff_name desc;
+
+
+-- Que 5. The course fee has to be paid in two installments. The first installment is 60% and second installment is 40% of total fee. Display the amount of both installments for all courses.
+select course_id, course_name, fee as total_fee, (0.60 * fee) as first_installment, (0.40 * fee) as second_installment from course;
+
+
+-- Que 6. Display the person come for enquiry whose name starts with 'A'.
+select name from enquiry_master where name like 'A%';
+
+
+-- Que 7. Display the total number of persons working in each state.
+select i.state_name as state_name, count(k.enquiry_id) as person_count
+from enquiry_master k right outer join city j using (city_id)
+                      right outer join state i using (state_id)
+group by i.state_name;
+
+
+-- Que 8. Display name, college_name, degree_name, stream_name, state_name, city_name, remark for all persons who shows interest in inquiry.
+select a.enquiry_id, a.name, b.college_name, c.degree_name, d.stream_name, e.state_name, f.city_name, g.remark
+from college b join college_history x on b.college_id = x.college_id
+               join qualification c on c.qid = x.qid
+               join stream d on d.stream_id = x.stream_id
+               join enquiry_master a on a.enquiry_id = x.enquiry_id
+               join follow_up g on a.enquiry_id = g.enquiry_id
+               join city f on a.city_id = f.city_id
+               join state e on e.state_id = f.state_id
+order by a.name;
+
+
+-- Que 9. Find the first person to whom staff is assigned.
+ select enquiry_id, name from enquiry_master where enquiry_id =
+ (select enquiry_id from enquiry_handled where assigned_date_to_staff =
+ (select min(assigned_date_to_staff) from enquiry_handled));
+
+
+-- Que 10. Find the name of person who comes for enquiry from state 'Maharashtra'.
+select enquiry_id, name from enquiry_master where city_id in
+(select city_id from city where state_id =
+(select state_id from state where lower(state_name) = 'maharashtra'));
+
+
+-- Que 11. Find the name of person to whom the staff is assigned on 'Saturday'?
+select enquiry_id, name from enquiry_master where enquiry_id in
+(select enquiry_id from enquiry_handled where to_char(assigned_date_to_staff, 'fmDAY') = 'SATURDAY'); 
+
+
+-- Que 12. Find the name of enquired person who have been admitted to college.
+select enquiry_id, name from enquiry_master where enquiry_id in
+(select enquiry_id from enquiry_master
+intersect
+select enquiry_id from follow_up where lower(remark) = 'admitted');
+
+
+-- Que 13. Using Conditional Expression, display 'Female', 'Male', 'Other' for gender 'F', 'M', 'O' respectively.
+
+select name, address, phone_no,
+case gender
+when 'M' then 'Male'
+when 'F' then 'Female'
+when 'O' then 'Other'
+end as gender
+from enquiry_master
+order by gender;
+
+
+-- Que 14. Find the city ID from which enquiry is initiated by using correleated subquery.
+select enquiry_id, name, city_id from enquiry_master em where city_id in
+(select city_id from city where city_id = em.city_id);
+
+
+-- Que 15. Display the states with total number of person working greater than 4.
+select i.state_name as state_name, count(k.enquiry_id) as person_count
+from enquiry_master k right outer join city j using (city_id)
+                      right outer join state i using (state_id)
+group by i.state_name
+having count(k.enquiry_id) > 4;
+
+
+-- Que 16. Find the enquiries with enquiry status as open
+select enquiry_id, enquiry_status, nvl(fee_suggested, 0) as fee_suggested, staff_status from enquiry_handled
+where lower(enquiry_status) = 'open';
+
+
+-- Que 17. Find the ranking of course based on fee amount and percentage of each course fee on total fee amount.
+select course_name, fee, 
+       dense_rank() over(order by fee nulls last) as rank_on_fee, 
+       sum(fee) over(order by fee range between unbounded preceding and unbounded following) as sum_fee,
+       trunc((fee / sum(fee) over(order by fee range between unbounded preceding and unbounded following)) * 100,2) || '%' as percent_of_total
+from course;
+
+
+--Que 18. Find the courses with maximum and minimum fees using CTE.
+with
+a as (select * from course where fee = (select max(fee) from course)),
+b as (select * from course where fee = (select min(fee) from course))
+select * from a
+union
+select * from b;
+
+
+
+-- SHUBHAM DESHMUKH | deshmukhsv3@gmail.com | 9096159803
+
+
+
+ 

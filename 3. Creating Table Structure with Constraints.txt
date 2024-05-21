@@ -1,0 +1,145 @@
+-- SHUBHAM DESHMUKH | deshmukhsv3@gmail.com | 9096159803
+
+-- Creating Tables with Constraints
+
+-- Create table 'COLLEGE'
+create table COLLEGE
+(college_id number default college_id.nextval,
+college_name varchar2(60) constraint college_name_is_unique_and_nn not null unique,
+constraint college_id_is_unique_and_nn primary key(college_id));
+
+-- Create table 'QUALIFICATION'
+create table QUALIFICATION
+(qid number default qid.nextval,
+degree_name varchar2(20) constraint degree_name_is_unique_and_nn not null unique,
+constraint qid_is_unique_and_nn primary key(qid));
+
+-- Create table 'STREAM'
+create table STREAM
+(stream_id number default stream_id.nextval,
+stream_name varchar2(25) constraint stream_name_is_unique_and_nn not null unique,
+constraint stream_id_is_unique_and_nn primary key(stream_id));
+
+-- Create table 'COLLEGE_SEM'
+create table COLLEGE_SEM
+(sem_id number default sem_id.nextval,
+sem_name varchar2(20) constraint sem_name_is_unique_and_nn not null unique,
+constraint sem_id_is_unique_and_nn primary key(sem_id));
+
+-- Create table 'COLLEGE_YEAR'
+create table COLLEGE_YEAR
+(year_id number default year_id.nextval,
+year_name varchar2(20) constraint year_name_is_unique_and_nn not null unique,
+constraint year_id_is_unique_and_nn primary key(year_id));
+
+
+
+-- Create table 'STAFF'
+create table STAFF
+(staff_id number default staff_id.nextval,
+staff_name varchar2(25) constraint staff_name_is_unique_and_nn not null unique,
+constraint staff_id_is_unique_and_nn primary key(staff_id)); 
+
+
+-- Create table 'COURSE'
+create table COURSE
+(course_id number default course_id.nextval,
+course_name varchar2(40) constraint course_name_is_unique_and_nn not null unique,
+fee number constraint please_enter_a_valid_amount not null check(fee > 0),
+constraint course_id_is_unique_and_nn primary key(course_id)); 
+
+
+-- Create table 'COUNTRY'
+create table COUNTRY
+(country_id varchar2(6) constraint country_id_is_unique_and_nn primary key,
+country_name varchar2(20) constraint country_name_is_unique_and_nn not null unique); 
+
+
+-- Create table 'STATE'
+create table STATE
+(state_id varchar2(6) constraint state_id_is_unique_and_nn primary key,
+state_name varchar2(25) constraint state_name_is_unique_and_nn not null unique,
+country_id varchar2(6) constraint country_id_FK references COUNTRY(country_id)); 
+
+
+-- Create table 'CITY'
+create table CITY
+(city_id varchar2(6) constraint city_id_is_unique_and_nn primary key,
+city_name varchar2(25) constraint city_name_is_unique_and_nn not null unique,
+state_id varchar2(6) constraint state_id_FK references STATE(state_id)); 
+
+
+-- Create table ENQUIRY_MASTER
+create table ENQUIRY_MASTER
+(enquiry_id varchar2(6) constraint enquiry_id_is_unique_and_nn primary key,
+name varchar2(20) not null,
+phone_no number not null unique constraint enter_a_valid_phone_number check (length(phone_no) = 10),
+email varchar2(20) not null constraint email_id_not_unique unique constraint invalid_format check(email like '%@%.%'),
+address varchar2(10) not null,
+gender varchar2(6) constraint please_enter_M_F_or_O not null,
+age number not null constraint please_enter_a_valid_age check (age > 0),
+working varchar2(6) constraint please_enter_Yes_or_No not null,
+work_experience interval year to month constraint please_enter_experience_in_the_format_of_YY_MM not null,
+job_profile varchar2(20) not null ,
+city_id varchar2(6) constraint city_id_FK references CITY(city_id));
+
+
+-- Create table 'COLLEGE_HISTORY'
+create table COLLEGE_HISTORY
+(enquiry_id varchar2(6) not null constraint enquiry_id_FK references ENQUIRY_MASTER(enquiry_id),
+college_id number not null constraint college_id_FK references COLLEGE(college_id),
+Date_of_change date not null ,
+sem_id number not null constraint sem_id_FK references COLLEGE_SEM(sem_id),
+year_id number not null constraint year_id_FK references COLLEGE_YEAR(year_id),
+qid number not null constraint qid_id_FK references QUALIFICATION(qid),
+stream_id number not null constraint stream_id_FK references STREAM(stream_id));
+
+
+-- Create table 'SOURCE_MASTER'
+create table SOURCE_MASTER
+(source_id varchar2(6) constraint source_id_is_unique_and_nn primary key,
+source_name varchar2(20) constraint source_name_nn not null constraint source_name_unique unique);
+
+
+-- Create table 'SOURCE_HISTORY'
+create table SOURCE_HISTORY
+(source_id varchar2(6) not null constraint source_FK references SOURCE_MASTER(source_id),
+enquiry_id varchar2(6) not null constraint enquiry_FK references ENQUIRY_MASTER(enquiry_id),
+source_date_of_enquiry date not null);
+
+
+-- Create table 'ENQUIRY_HANDLED'
+create table ENQUIRY_HANDLED
+(enquiry_id varchar2(6) not null constraint enquiry_i_d_FK references ENQUIRY_MASTER(enquiry_id),
+assigned_date_to_staff date,
+handled_enquiry_date date,
+fee_suggested number constraint please_enter_amount check(fee_suggested > 0),
+staff_status varchar2(20) constraint please_enter_Assigned_or_Not_Assigned not null,
+enquiry_status varchar2(10) constraint please_enter_Open_or_Closed not null,
+course_id number not null constraint courseid_FK references COURSE(course_id),
+staff_id number constraint staffid_FK references STAFF(staff_id),
+visited_status varchar2(6) constraint please_write_Yes_or_No not null,
+registered_status varchar2(6) constraint please_enter_only_Yes_or_No not null,
+close_date_of_enquiry date,
+close_enquiry_status varchar2(10));
+
+
+
+-- Create table 'FOLLOW_UP'
+create table FOLLOW_UP
+(followup_id varchar2(6) constraint followup_id_is_unique_and_nn primary key,
+staff_id number not null constraint staffid_FKey references STAFF(staff_id),
+enquiry_id varchar2(6) not null constraint enquiryid_FK references ENQUIRY_MASTER(enquiry_id),
+status varchar2(20),
+date_of_followup date,
+remark varchar2(20),
+next_followup_date date);
+
+-- SHUBHAM DESHMUKH | deshmukhsv3@gmail.com | 9096159803
+
+
+
+
+
+
+

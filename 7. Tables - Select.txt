@@ -1,0 +1,53 @@
+-- SHUBHAM DESHMUKH | deshmukhsv3@gmail.com | 9096159803
+
+select * from college;
+
+
+select * from qualification;
+
+
+select * from stream;
+
+
+select * from college_sem;
+
+
+select * from college_year;
+
+
+select * from staff;
+
+
+select * from course;
+
+
+select * from country;
+
+
+select * from state;
+
+
+select * from city;
+
+
+select * from enquiry_master;
+
+
+select * from college_history;
+
+
+select * from source_master;
+
+
+select * from source_history;
+
+
+select * from enquiry_handled;
+
+
+select * from follow_up;
+
+
+-- SHUBHAM DESHMUKH | deshmukhsv3@gmail.com | 9096159803
+
+

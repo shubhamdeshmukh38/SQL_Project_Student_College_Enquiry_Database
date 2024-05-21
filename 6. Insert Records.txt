@@ -1,0 +1,224 @@
+-- SHUBHAM DESHMUKH | deshmukhsv3@gmail.com | 9096159803
+
+-- Inserting Data
+
+-- College
+insert into college values (default , 'Visvesvaraya National Institute of Technology Nagpur');
+insert into college values (default , 'Laxminarayan Instiute of Technology Nagpur');
+insert into college values (default , 'National Power Training Instiute Nagpur');
+insert into college values (default , 'Government College of Engineering Nagpur');
+insert into college values (default , 'Indian Instiute of Information Technology Nagpur');
+insert into college values (default , 'Shri Ramdeobaba College of Engineering and Management Nagpur');
+insert into college values (default , 'Yeshwantrao Chavan College of Engineering Nagpur');
+insert into college values (default , 'Priyadarshini College of Engineering Nagpur');
+commit;
+
+
+-- Qualification
+insert into qualification values(default ,'B.E./B.Tech.');
+insert into qualification values(default ,'M.E./M.Tech.');
+insert into qualification values(default ,'PHD');
+insert into qualification values(default ,'MBA');
+commit;
+
+-- Stream
+insert into stream values (default ,'Engineering');
+insert into stream values (default ,'Management Technology');
+commit;
+
+-- College_sem
+insert into college_sem values(default ,'First');
+insert into college_sem values(default ,'Second');
+insert into college_sem values(default ,'Third');
+insert into college_sem values(default ,'Fourth');
+insert into college_sem values(default ,'Fifth');
+insert into college_sem values(default ,'Sixth');
+insert into college_sem values(default ,'Seventh');
+insert into college_sem values(default ,'Eighth');
+commit;
+
+-- College_year
+insert into college_year values(default ,'First');
+insert into college_year values(default ,'Second');
+insert into college_year values(default ,'Third');
+insert into college_year values(default ,'Fourth');
+insert into college_year values(default ,'Fifth');
+commit;
+
+--Staff
+insert into staff values (default ,'Saurabh Joshi');
+insert into staff values (default ,'Sandeep Joshi');
+insert into staff values (default ,'Vishal Shukla');
+insert into staff values (default ,'Alok Jha');
+insert into staff values (default ,'Sachin Deshmukh');
+insert into staff values (default ,'Pranjali Deole');
+insert into staff values (default ,'Mahendra Gupta');
+insert into staff values (default ,'Nitin Sawarkar');
+insert into staff values (default ,'J P Modak');
+insert into staff values (default ,'Rupali Tupkar');
+insert into staff values (default ,'Dipak Hazare');
+insert into staff values (default ,'Sagar Jawalekar');
+commit;
+
+-- Course
+insert into course values (default ,'Biomedical Engineering',400000);
+insert into course values (default ,'Civil Engineering',300000);
+insert into course values (default ,'Computer Science and Engineering',400000);
+insert into course values (default ,'AIML',450000);
+insert into course values (default ,'Cyber Security',450000);
+insert into course values (default ,'Data Science',450000);
+insert into course values (default ,'Electrical Engineering',300000);
+insert into course values (default ,'Electronics Engineering',350000);
+insert into course values (default ,'Industrial Engineering',400000);
+insert into course values (default ,'Mechanical Engineering',450000);
+insert into course values (default ,'IOT',450000);
+insert into course values (default ,'Structural Engineering',350000);
+insert into course values (default ,'Robotics and Automation',400000);
+insert into course values (default ,'Environmental Engineering',400000);
+insert into course values (default ,'Chemical Engineering',450000);
+insert into course values (default ,'Geotech Engineering',300000);
+insert into course values (default ,'VLSI Design',300000);
+insert into course values (default ,'Heat Power Engineering',350000);
+insert into course values (default ,'Solar Energy Engineering',450000);
+insert into course values (default ,'Human Resource',500000);
+insert into course values (default ,'Finance',500000);
+insert into course values (default ,'Marketing',500000);
+insert into course values (default ,'Operations',500000);
+insert into course values (default ,'SCM',500000);
+commit;
+
+-- Country
+insert into country values ('CO1','India');
+commit;
+
+-- State
+insert into state values ('STA1','Maharashtra','CO1');
+insert into state values ('STA2','Madhya Pradesh','CO1');
+insert into state values ('STA3','Gujarat','CO1');
+insert into state values ('STA4','Jharkhand','CO1');
+insert into state values ('STA5','Kerla','CO1');
+insert into state values ('STA6','Telangana','CO1');
+insert into state values ('STA7','Nagaland','CO1');
+insert into state values ('STA8','Andhra Pradesh','CO1');
+commit;
+
+-- City
+insert into city values ('CT1','Mumbai','STA1');
+insert into city values ('CT2','Nagpur','STA1');
+insert into city values ('CT3','Bhopal','STA2');
+insert into city values ('CT4','Gwalior','STA2');
+insert into city values ('CT5','Ahmedabad','STA3');
+insert into city values ('CT6','Surat','STA3');
+insert into city values ('CT7','Ranchi','STA4');
+insert into city values ('CT8','Dhanbad','STA4');
+insert into city values ('CT9','Kannur','STA5');
+insert into city values ('CT10','Thrissur','STA5');
+insert into city values ('CT11','Hyderabad','STA6');
+insert into city values ('CT12','Warangal','STA6');
+insert into city values ('CT13','Kohima','STA7');
+insert into city values ('CT14','Dimapur','STA7');
+insert into city values ('CT15','Tirupati','STA8');
+insert into city values ('CT16','Vijayawada','STA8');
+commit;
+
+-- Enquiry_master
+insert into enquiry_master values ('E1','Saurabh Bhoyar',9096159801,'saurabh@gmail.com','Mumbai','M',26,'No','00-00','Data Analyst','CT1');
+insert into enquiry_master values ('E2','Sangeeta Deshmukh',9096159802,'sangeeta@gmail.com','Bhopal','F',30,'Yes','00-06','Business Analyst','CT3');
+insert into enquiry_master values ('E3','Chetan Bawankule',9096159804,'chetan@gmail.com','Ahemdabad','M',20,'No','00-00','Data Engineer','CT5');
+insert into enquiry_master values ('E4','Ritesh Wagh',9096159805,'ritesh@gmail.com','Nagpur','M',28,'Yes','01-06','SQL Developer','CT2');
+insert into enquiry_master values ('E5','Pranav Galphade',9096159806,'pranav@gmail.com','Bhopal','M',35,'No','00-00','DBA','CT3');
+insert into enquiry_master values ('E6','Avinash Mandal',9096159807,'avinash@gmail.com','Surat','M',24,'No','00-00','Data Analyst','CT6');
+insert into enquiry_master values ('E7','Divyansh Sharma',9096159808,'divyansh@gmail.com','Ranchi','M',22,'Yes','02-08','SQL Developer','CT7');
+insert into enquiry_master values ('E8','Ankita Wandile',9096159809,'ankita@gmail.com','Nagpur','F',38,'No','00-00','DBA','CT2');
+insert into enquiry_master values ('E9','Yashii Sahu',9096159810,'roshni@gmail.com','Hyderabad','O',34,'Yes','03-08','Data Engineer','CT1');
+insert into enquiry_master values ('E10','Sakshi Deshmukh',9096159811,'sakshi@gmail.com','Kohima','F',22,'No','00-00','Data Analyst','CT3');
+insert into enquiry_master values ('E11','Rohit Gomkar',9096159812,'rohit@gmail.com','Tirupati','M',25,'Yes','05-11','Data Engineer','CT5');
+insert into enquiry_master values ('E12','Amit Gher',9096159813,'amit@gmail.com','Nagpur','M',33,'No','00-00','DBA','CT2');
+insert into enquiry_master values ('E13','Einstine Wittke',9096159814,'einstine@gmail.com','Mumbai','M',26,'Yes','04-03','Business Analyst','CT1');
+insert into enquiry_master values ('E14','Roshni Sahu',9096159815,'pranjali@gmail.com','Surat','F',32,'No','00-00','SQL Developer','CT6');
+insert into enquiry_master values ('E15','Shubham Deshmukh',9096159816,'mayur@gmail.com','Bhopal','M',42,'Yes','08-09','Business Analyst','CT3');
+commit;
+
+-- College_history
+insert into college_history values ('E1',1,'28-JAN-20',2,1,1,1);
+insert into college_history values ('E2',1,'30-JAN-20',5,3,3,1);
+insert into college_history values ('E3',2,'01-FEB-20',3,2,2,1);
+insert into college_history values ('E4',2,'25-FEB-20',6,3,3,1);
+insert into college_history values ('E5',3,'15-MAR-20',5,3,1,1);
+insert into college_history values ('E6',3,'30-MAR-20',8,4,1,1);
+insert into college_history values ('E7',4,'12-APR-20',6,3,1,1);
+insert into college_history values ('E8',4,'27-MAY-20',7,4,1,1);
+insert into college_history values ('E9',5,'16-JUN-20',4,2,4,2);
+insert into college_history values ('E10',5,'17-JUL-20',1,1,2,1);
+insert into college_history values ('E11',6,'03-AUG-20',4,2,4,2);
+insert into college_history values ('E12',6,'04-AUG-20',3,2,2,1);
+insert into college_history values ('E13',7,'13-SEP-20',4,2,1,1);
+insert into college_history values ('E14',7,'12-NOV-20',1,1,2,1);
+insert into college_history values ('E15',8,'31-DEC-20',5,3,1,1);
+commit;
+
+-- Source_Master
+insert into source_master values ('SO1','Newspaper');
+insert into source_master values ('SO2','Social Media');
+insert into source_master values ('SO3','Google');
+insert into source_master values ('SO4','Promotion Mails');
+insert into source_master values ('SO5','Advertisement');
+insert into source_master values ('SO6','Banners');
+insert into source_master values ('SO7','Friends');
+commit;
+
+-- Source_history
+insert into source_history values ('SO1','E1','01-JAN-23');
+insert into source_history values ('SO7','E2','03-JAN-23');
+insert into source_history values ('SO2','E3','08-JAN-23');
+insert into source_history values ('SO6','E4','10-JAN-23');
+insert into source_history values ('SO3','E5','10-JAN-23');
+insert into source_history values ('SO5','E6','15-JAN-23');
+insert into source_history values ('SO4','E7','18-JAN-23');
+insert into source_history values ('SO4','E8','18-JAN-23');
+insert into source_history values ('SO5','E9','01-FEB-23');
+insert into source_history values ('SO3','E10','05-FEB-23');
+insert into source_history values ('SO6','E11','07-FEB-23');
+insert into source_history values ('SO2','E12','09-FEB-23');
+insert into source_history values ('SO7','E13','13-FEB-23');
+insert into source_history values ('SO5','E14','20-FEB-23');
+insert into source_history values ('SO1','E15','25-FEB-23');
+commit;
+
+--Enquiry_handled
+insert into enquiry_handled values ('E1','04-JAN-23','05-Jan-23','400000','Assigned','Closed',10,1,'Yes','Yes','07-JAN-23','Manual');
+insert into enquiry_handled values ('E2',null,null,null,'Not Assigned','Open',18,null,'No','No',null ,null);
+insert into enquiry_handled values ('E3',null,null,null,'Not Assigned','Open',4,null,'No','No',null,null);
+insert into enquiry_handled values ('E4','13-JAN-23','14-JAN-23',450000,'Assigned','Closed',15,4,'Yes','Yes','15-JAN-23','Auto');
+insert into enquiry_handled values ('E5','15-JAN-23','16-JAN-23',300000,'Assigned','Closed',6,5,'Yes','Yes','17-JAN-23','Auto');
+insert into enquiry_handled values ('E6','17-JAN-23','18-JAN-23',320000,'Assigned','Closed',16,6,'Yes','Yes','19-JAN-23','Auto');
+insert into enquiry_handled values ('E7','20-JAN-23','21-JAN-23',480000,'Assigned','Closed',11,7,'Yes','Yes','22-JAN-23','Manual');
+insert into enquiry_handled values ('E8','22-JAN-23','23-JAN-23',450000,'Assigned','Closed',17,8,'No','No','24-JAN-23','Auto');
+insert into enquiry_handled values ('E9','25-JAN-23','26-JAN-23',500000,'Assigned','Closed',20,9,'No','No','27-JAN-23','Manual');
+insert into enquiry_handled values ('E10','08-FEB-23','09-FEB-23',330000,'Assigned','Closed',13,10,'Yes','Yes','10-FEB-23','Auto');
+insert into enquiry_handled values ('E11','11-FEB-23','12-FEB-23',600000,'Assigned','Closed',21,11,'No','No','13-FEB-23','Manual');
+insert into enquiry_handled values ('E12','12-FEB-23','13-FEB-23',440000,'Assigned','Closed',6,12,'Yes','Yes','14-FEB-23','Auto');
+insert into enquiry_handled values ('E13','18-FEB-23','19-FEB-23',490000,'Assigned','Closed',6,8,'Yes','Yes','20-FEB-23','Auto');
+insert into enquiry_handled values ('E14','25-FEB-23','25-FEB-23',360000,'Assigned','Closed',4,10,'Yes','Yes','26-FEB-23','Manual');
+insert into enquiry_handled values ('E15','27-FEB-23','27-FEB-23',300000,'Assigned','Closed',6,3,'Yes','Yes','27-FEB-23','Auto');
+commit;
+
+-- Follow_up
+insert into follow_up values ('FU1',1,'E1','7 Days Left','10-JAN-23','Admitted','17-JAN-23');
+insert into follow_up values ('FU2',4,'E4','6 Days Left','18-JAN-23','Not Admitted','24-JAN-23');
+insert into follow_up values ('FU3',5,'E5','5 Days Left','20-JAN-23','Not Admitted','25-JAN-23');
+insert into follow_up values ('FU4',6,'E6','4 Days Left','22-JAN-23','Admitted','28-JAN-23');
+insert into follow_up values ('FU5',7,'E7','1 Days Left','25-JAN-23','Not Admitted','26-JAN-23');
+insert into follow_up values ('FU6',8,'E8','2 Days Left','27-JAN-23','Admitted','29-JAN-23');
+insert into follow_up values ('FU7',9,'E9','5 Days Left','30-JAN-23','Not Admitted','04-FEB-23');
+insert into follow_up values ('FU8',10,'E10','7 Days Left','13-FEB-23','Admitted','20-FEB-23');
+insert into follow_up values ('FU9',11,'E11','6 Days Left','16-FEB-23','Admitted','22-FEB-23');
+insert into follow_up values ('FU10',12,'E12','3 Days Left','17-FEB-23','Admitted','20-FEB-23');
+insert into follow_up values ('FU11',8,'E13','2 Days Left','23-FEB-23','Not Admitted','25-FEB-23');
+insert into follow_up values ('FU12',10,'E14','3 Days Left','01-MAR-23','Admitted','04-MAR-23');
+insert into follow_up values ('FU13',3,'E15','5 Days Left','03-MAR-23','Admitted','08-MAR-23');
+commit;
+
+
+
+-- SHUBHAM DESHMUKH | deshmukhsv3@gmail.com | 9096159803

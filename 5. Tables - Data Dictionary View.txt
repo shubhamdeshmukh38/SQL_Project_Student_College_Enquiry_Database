@@ -1,0 +1,38 @@
+-- SHUBHAM DESHMUKH | deshmukhsv3@gmail.com | 9096159803
+
+
+-- Table Information
+select object_name, object_type, created, status
+from user_objects
+where object_type = 'TABLE';
+
+
+
+-- General Column Information
+
+describe college
+describe qualification
+describe stream
+describe college_sem
+describe college_year
+describe staff
+describe course
+describe country
+describe state
+describe city
+describe enquiry_master
+describe college_history
+describe source_master
+describe source_history
+describe enquiry_handled
+describe follow_up
+
+
+-- Detailed Table Information
+select table_name, column_name, data_type, data_length, data_precision, data_scale, nullable
+from user_tab_columns
+order by table_name;
+
+
+
+-- SHUBHAM DESHMUKH | deshmukhsv3@gmail.com | 9096159803

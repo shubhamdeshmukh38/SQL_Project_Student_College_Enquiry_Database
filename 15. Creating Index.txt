@@ -1,0 +1,48 @@
+-- SHUBHAM DESHMUKH | deshmukhsv3@gmail.com | 9096159803
+
+
+
+
+-- Creating B*Tree - Non Unique Index on columns having more 'Distinct' Values.
+
+create index btree_non_unique on enquiry_master (name);
+
+create index btree_non_unique_address on enquiry_master (address);
+
+create index btree_non_unique_work_exp on enquiry_master (work_experience);
+
+
+
+
+-- Creating Bitmap - Non Unique Index on columns having more 'Repeated Values' Values.
+
+create bitmap index bitmap_idx_gender on enquiry_master (gender);
+
+create bitmap index bitmap_idx_working on enquiry_master (working);
+
+create bitmap index bitmap_idx_staff on enquiry_handled (staff_status);
+
+create bitmap index bitmap_idx_enquiry on enquiry_handled (enquiry_status);
+
+create bitmap index bitmap_idx_visited on enquiry_handled (visited_status);
+
+create bitmap index bitmap_idx_registered on enquiry_handled (registered_status);
+
+create bitmap index bitmap_idx_close_enquiry on enquiry_handled (close_enquiry_status);
+
+
+
+
+-- Checking All Index 
+
+select object_name, object_type, created, status
+from user_objects
+where object_type = 'INDEX'
+order by object_type;
+
+
+
+-- SHUBHAM DESHMUKH | deshmukhsv3@gmail.com | 9096159803
+
+
+

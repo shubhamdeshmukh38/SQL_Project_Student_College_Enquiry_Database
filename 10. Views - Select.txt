@@ -1,0 +1,12 @@
+-- SHUBHAM DESHMUKH | deshmukhsv3@gmail.com | 9096159803
+
+
+
+select * from education_opt;
+
+select * from enquiry_details;
+
+select * from colleges;
+
+
+-- SHUBHAM DESHMUKH | deshmukhsv3@gmail.com | 9096159803

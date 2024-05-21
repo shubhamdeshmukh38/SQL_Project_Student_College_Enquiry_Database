@@ -1,0 +1,23 @@
+-- SHUBHAM DESHMUKH | deshmukhsv3@gmail.com | 9096159803
+
+
+-- General View Information
+
+select object_name, object_type, created, status
+from user_objects
+where object_type = 'VIEW';
+
+
+
+-- Specific View Information
+
+select text_vc from user_views where view_name = 'EDUCATION_OPT';
+
+select text_vc from user_views where view_name = 'ENQUIRY_DETAILS';
+
+select text_vc from user_views where view_name = 'COLLEGES';
+
+
+
+-- SHUBHAM DESHMUKH | deshmukhsv3@gmail.com | 9096159803
+

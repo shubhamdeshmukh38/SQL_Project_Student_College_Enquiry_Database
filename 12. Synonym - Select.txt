@@ -1,0 +1,19 @@
+-- SHUBHAM DESHMUKH | deshmukhsv3@gmail.com | 9096159803
+
+-- Retriving Private Synonym
+select * from clg;
+select * from qul;
+select * from crs;
+select * from enq_mstr;
+select * from clg_his;
+select * from src_mstr;
+
+
+-- Retriving Public Synonym
+select * from ct1;
+select * from st1;
+select * from cunt1;
+select * from crs1;
+
+
+-- SHUBHAM DESHMUKH | deshmukhsv3@gmail.com | 9096159803

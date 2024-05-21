@@ -1,0 +1,22 @@
+-- SHUBHAM DESHMUKH | deshmukhsv3@gmail.com | 9096159803
+
+-- Sequence Data Dictionary View
+
+
+select * from user_sequences where lower(sequence_name) = 'college_id';
+
+select * from user_sequences where lower(sequence_name) = 'qid';
+
+select * from user_sequences where lower(sequence_name) = 'stream_id';
+
+select * from user_sequences where lower(sequence_name) = 'sem_id';
+
+select * from user_sequences where lower(sequence_name) = 'year_id';
+
+select * from user_sequences where lower(sequence_name) = 'course_id';
+
+select * from user_sequences where lower(sequence_name) = 'staff_id';
+
+
+
+-- SHUBHAM DESHMUKH | deshmukhsv3@gmail.com | 9096159803

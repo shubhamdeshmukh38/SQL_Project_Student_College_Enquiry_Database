@@ -1,0 +1,60 @@
+-- SHUBHAM DESHMUKH | deshmukhsv3@gmail.com | 9096159803
+
+-- Creating Sequence
+
+create sequence college_id
+start with 1
+increment by 1
+minvalue 1
+nocache;
+
+
+create sequence qid
+start with 1
+increment by 1
+minvalue 1
+nocache;
+
+
+create sequence stream_id
+start with 1
+increment by 1
+minvalue 1
+nocache;
+
+create sequence sem_id
+start with 1
+increment by 1
+minvalue 1
+nocache;
+
+
+create sequence year_id
+start with 1
+increment by 1
+minvalue 1
+nocache;
+
+
+create sequence course_id
+start with 1
+increment by 1
+minvalue 1
+nocache;
+
+
+create sequence staff_id
+start with 1
+increment by 1
+minvalue 1
+nocache;
+
+
+
+
+-- SHUBHAM DESHMUKH | deshmukhsv3@gmail.com | 9096159803
+
+
+
+
+

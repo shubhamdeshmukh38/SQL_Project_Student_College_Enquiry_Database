@@ -1,0 +1,11 @@
+-- SHUBHAM DESHMUKH | deshmukhsv3@gmail.com | 9096159803
+
+
+-- Checking auto created index (B*TREE - Unique Index) due to 'Primary Key' and 'Unique Key'
+
+select object_name, object_type, created, status
+from user_objects
+where object_type = 'INDEX';
+
+
+-- SHUBHAM DESHMUKH | deshmukhsv3@gmail.com | 9096159803
